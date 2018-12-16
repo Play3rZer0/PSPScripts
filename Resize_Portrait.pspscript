@@ -1,0 +1,36 @@
+from PSPApp import *
+
+def ScriptProperties():
+    return {
+        'Author': u'AuthorName',
+        'Copyright': u'Author',
+        'Description': u'Resize to 4x6 (Portrait) & Sharpen',
+        'Host': u'X4',
+        'Host Version': u'13.00 Alpha 00000000.0000000000.00'
+        }
+
+
+
+def Do(Environment):
+    
+    # Resize
+    App.Do( Environment, 'Resize', {
+            'AspectRatio': 0.6623, 
+            'CurrentDimensionUnits': App.Constants.UnitsOfMeasure.Pixels, 
+            'CurrentResolutionUnits': App.Constants.ResolutionUnits.PixelsPerIn, 
+            'Height': 906, 
+            'MaintainAspectRatio': True, 
+            'Resample': True, 
+            'ResampleType': App.Constants.ResampleType.Bicubic, 
+            'ResizeAllLayers': True, 
+            'Resolution': 300, 
+            'Width': 600, 
+            'SharpnessValue': 50, 
+            'AdvancedMode': True, 
+            'GeneralSettings': {
+                'ExecutionMode': App.Constants.ExecutionMode.Default, 
+                'AutoActionMode': App.Constants.AutoActionMode.Match, 
+                'Version': ((13,0,0),1)
+                }
+            })
+
