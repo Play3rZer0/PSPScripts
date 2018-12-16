@@ -1,0 +1,59 @@
+from PSPApp import *
+
+def ScriptProperties():
+    return {
+        'Author': u'Author',
+        'Copyright': u'AuthorName',
+        'Description': u'',
+        'Host': u'X4',
+        'Host Version': u'14.00 Alpha 00000000.0000000000.00'
+        }
+
+def Do(Environment):
+    # EnableOptimizedScriptUndo
+    App.Do( Environment, 'EnableOptimizedScriptUndo', {
+            'GeneralSettings': {
+                'ExecutionMode': App.Constants.ExecutionMode.Default, 
+                'AutoActionMode': App.Constants.AutoActionMode.Match, 
+                'Version': ((14,0,0),1)
+                }
+            })
+
+    # Sharpen
+    App.Do( Environment, 'Sharpen', {
+            'GeneralSettings': {
+                'ExecutionMode': App.Constants.ExecutionMode.Default, 
+                'AutoActionMode': App.Constants.AutoActionMode.Match, 
+                'Version': ((14,0,0),1)
+                }
+            })
+
+    # HighPassSharpen
+    App.Do( Environment, 'HighPassSharpen', {
+            'BlendMode': App.Constants.BlendMode.SoftLight, 
+            'Strength': 70, 
+            'Radius': 73, 
+            'GeneralSettings': {
+                'ExecutionMode': App.Constants.ExecutionMode.Default, 
+                'AutoActionMode': App.Constants.AutoActionMode.Match, 
+                'Version': ((14,0,0),1)
+                }
+            })
+
+    # ColorBalance
+    App.Do( Environment, 'ColorBalance', {
+            
+            })
+
+    # Color Adjust Brightness Contrast
+    App.Do( Environment, 'ColorAdjustBrightnessContrast', {
+            'BrightnessContrast': {
+                'Brightness': 8, 
+                'Contrast': -4
+                }, 
+            'GeneralSettings': {
+                'ExecutionMode': App.Constants.ExecutionMode.Default, 
+                'AutoActionMode': App.Constants.AutoActionMode.Match, 
+                'Version': ((14,0,0),1)
+                }
+            })
