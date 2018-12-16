@@ -1,0 +1,51 @@
+from PSPApp import *
+
+def ScriptProperties():
+    return {
+        'Author': u'VT',
+        'Copyright': u'2016',
+        'Description': u'',
+        'Host': u'PaintShop Pro',
+        'Host Version': u'14.00 Alpha 00000000.0000000000.00'
+        }
+
+def Do(Environment):
+    # EnableOptimizedScriptUndo
+    App.Do( Environment, 'EnableOptimizedScriptUndo', {
+            'GeneralSettings': {
+                'ExecutionMode': App.Constants.ExecutionMode.Default, 
+                'AutoActionMode': App.Constants.AutoActionMode.Match, 
+                'Version': ((14,0,0),1)
+                }
+            })
+
+    # SmoothSkin
+    App.Do( Environment, 'SmoothSkin', {
+            'Amount': 8, 
+            'GeneralSettings': {
+                'ExecutionMode': App.Constants.ExecutionMode.Default, 
+                'AutoActionMode': App.Constants.AutoActionMode.Match, 
+                'Version': ((14,0,0),1)
+                }
+            })
+
+    # ColorAdjustCurves
+    App.Do( Environment, 'ColorAdjustCurves', {
+            'CurveParams': {
+                'RGB': [(0,0),(127,149),(255,255)], 
+                'Red': [(0,0),(255,255)], 
+                'Green': [(0,0),(255,255)], 
+                'Blue': [(0,0),(255,255)], 
+                'Clipping': 0
+                }, 
+            'GeneralSettings': {
+                'ExecutionMode': App.Constants.ExecutionMode.Default, 
+                'AutoActionMode': App.Constants.AutoActionMode.Match, 
+                'Version': ((14,0,0),1)
+                }
+            })
+
+    # Color Adjust HSL
+    App.Do( Environment, 'ColorAdjustHSL', {
+            
+            })
